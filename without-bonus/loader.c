@@ -3,7 +3,7 @@
 Elf32_Ehdr *ehdr;
 Elf32_Phdr *phdr;
 int fd;
-typedef int("functocallfib")();
+typedef int(*functocallfib)();
 
 /*
  * release memory and other cleanups
@@ -18,13 +18,6 @@ void loader_cleanup()
 /*
  * Load and run the ELF executable file
  */
-void load_and_run_elf(char **exe)
-{
-  fd = open(argv[1], O_RDONLY);
-
-  int result = _start();
-  printf("User _start return value = %d\n", result);
-}
 
 void load_and_run_elf(char **exe)
 {
