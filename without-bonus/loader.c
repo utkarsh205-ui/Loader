@@ -118,7 +118,7 @@ int main(int argc, char **argv)
 
   close(f1);
 
-  load_and_run_elf(argv[1]);
+  load_and_run_elf(argv);
 
   loader_cleanup();
   return 0;
